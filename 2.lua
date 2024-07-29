@@ -5,7 +5,7 @@ getgenv().script_key = getgenv().script_key or "default_key"
 getgenv().targetPetID = getgenv().targetPetID or 0
 
 -- Print debug information
-print("lua - Script Key: Success")
+print("lua - Script Key: Processing")
 print("lua - Target Pet ID: Processing")
 
 -- Load and execute 3.lua
