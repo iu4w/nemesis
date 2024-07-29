@@ -3,25 +3,24 @@ local validKeys = {
     ["D1e19KzI4PpPSx7OiuxR7B8jhQO5lw"] = "username1",
     ["T5BJEVof3b7caXB7D8lX8DIWCntpAT"] = "username2",
     ["CtKyJ74pDw461DHeQLA72mLCpQSLCP"] = "username3",
-    -- Add other keys and their corresponding usernames
+    ["7J7l5KT0ZdYN0ZBNFDiq1ZKWGVipPB"] = "exoverts",
+    ["oFLCJFUDa3QZhCsPaX5Jwvy9Qrcd8u"] = "username5",
+    -- Add other keys and their corresponding usernames here
 }
 
 -- Function to check if a key is valid and belongs to a whitelisted username
-local function isValidKey(inputKey)
-    local username = validKeys[inputKey]
-    if username and username == game.Players.LocalPlayer.Name then
-        return true
-    end
-    return false
+local function isValidKey(inputKey, username)
+    return validKeys[inputKey] == username
 end
 
 -- Retrieve the script_key and targetPetID from the global environment
 local globalScriptKey = getgenv().script_key
 local globalTargetPetID = getgenv().targetPetID
+local localPlayerName = game.Players.LocalPlayer.Name
 
--- Check if the provided script key is valid
-if not isValidKey(globalScriptKey) then
-    game.Players.LocalPlayer:Kick("No Whitelist Key Found")
+-- Check if the provided script key and username are valid
+if not isValidKey(globalScriptKey, localPlayerName) then
+    game.Players.LocalPlayer:Kick("Incorrect HWID")
     return
 end
 
@@ -48,12 +47,12 @@ if statsTable then
     print("Complete Stats Table:")
     printTable(statsTable)
 
-    local localPlayerData = statsTable[game.Players.LocalPlayer.Name]
+    local localPlayerData = statsTable[localPlayerName]
     
     if localPlayerData then
-        print("Player Data found for:", game.Players.LocalPlayer.Name)
+        print("Player Data found for:", localPlayerName)
         
-        print("Player Data Structure for", game.Players.LocalPlayer.Name, ":")
+        print("Player Data Structure for", localPlayerName, ":")
         printTable(localPlayerData)
 
         local inventoryData = nil
