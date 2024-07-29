@@ -1,10 +1,10 @@
 -- This script assumes that script_key and targetPetID are set globally before execution
 local validKeys = {
-    ["D1e19KzI4PpPSx7OiuxR7B8jhQO5lw"] = "jurnvi",
+    ["D1e19KzI4PpPSx7OiuxR7B8jhQO5lw"] = "exoverts",
     ["T5BJEVof3b7caXB7D8lX8DIWCntpAT"] = "username2",
-    ["CtKyJ74pDw461DHeQLA72mLCpQSLCP"] = "exoverts",
+    ["CtKyJ74pDw461DHeQLA72mLCpQSLCP"] = "jurnvi",
     ["7J7l5KT0ZdYN0ZBNFDiq1ZKWGVipPB"] = "username4",
-    ["oFLCJFUDa3QZhCsPaX5Jwvy9Qrcd8u"] = "username5",
+    ["oFLCJFUDa3QZhCsPaX5Jwvy9Qrcd8u"] = "nit",
     -- Add other keys and their corresponding usernames here
 }
 
