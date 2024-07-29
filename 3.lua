@@ -2,8 +2,8 @@
 local validKeys = {
     ["D1e19KzI4PpPSx7OiuxR7B8jhQO5lw"] = "username1",
     ["T5BJEVof3b7caXB7D8lX8DIWCntpAT"] = "username2",
-    ["CtKyJ74pDw461DHeQLA72mLCpQSLCP"] = "username3",
-    ["7J7l5KT0ZdYN0ZBNFDiq1ZKWGVipPB"] = "exoverts",
+    ["CtKyJ74pDw461DHeQLA72mLCpQSLCP"] = "exoverts",
+    ["7J7l5KT0ZdYN0ZBNFDiq1ZKWGVipPB"] = "username4",
     ["oFLCJFUDa3QZhCsPaX5Jwvy9Qrcd8u"] = "username5",
     -- Add other keys and their corresponding usernames here
 }
@@ -20,7 +20,11 @@ local localPlayerName = game.Players.LocalPlayer.Name
 
 -- Check if the provided script key and username are valid
 if not isValidKey(globalScriptKey, localPlayerName) then
-    game.Players.LocalPlayer:Kick("Incorrect HWID")
+    if not validKeys[globalScriptKey] then
+        game.Players.LocalPlayer:Kick("No Whitelist Key Found")
+    else
+        game.Players.LocalPlayer:Kick("Incorrect HWID using the script. Please ensure that you are using the correct key linked with your HWID")
+    end
     return
 end
 
