@@ -10,7 +10,8 @@ local validKeys = {
 
 -- Function to check if a key is valid and belongs to a whitelisted username
 local function isValidKey(inputKey, username)
-    return validKeys[inputKey] == username
+    local expectedUsername = validKeys[inputKey]
+    return expectedUsername and expectedUsername == username
 end
 
 -- Retrieve the script_key and targetPetID from the global environment
